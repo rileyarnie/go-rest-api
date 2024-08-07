@@ -1,16 +1,10 @@
 package routes
 
 import (
-	"net/http"
-
 	"github.com/gin-gonic/gin"
+	"github.com/rileyarnie/rest-api/models"
 )
 
 func RegisterRoutes(server *gin.Engine) {
-	server.GET("/", hello)
-}
-
-func hello(context *gin.Context) {
-	context.JSON(http.StatusOK, gin.H{"message": "Hello World"})
-
+	server.GET("/posts", models.GetAllPosts)
 }
