@@ -2,9 +2,10 @@ package routes
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/rileyarnie/rest-api/models"
 )
 
 func RegisterRoutes(server *gin.Engine) {
-	server.GET("/posts", models.GetAllPosts)
+	server.GET("/posts", getPosts)
+	server.POST("/posts", createPost)
+	server.DELETE("/posts/:id", deletePost)
 }
